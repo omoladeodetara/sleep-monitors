@@ -23,7 +23,7 @@ Run `build.ps1`. Output: `dist\SleepMonitors.exe`. The `--check` argument exits 
 
 The executable is unsigned and may be blocked by Windows Application Control. The shortcuts use `sleep-monitors.ps1`; run it with `-Check` to validate loading without turning off the displays. Neither installer nor app changes security policies.
 
-The app sends Windows `WM_SYSCOMMAND / SC_MONITORPOWER` with the display-off value `2`. Some drivers, applications or input devices may wake the displays again.
+The app sends Windows `WM_SYSCOMMAND / SC_MONITORPOWER` with the display-off value `2` to the desktop window. Targeting the desktop avoids waiting on unresponsive application windows. Some drivers, applications or input devices may wake the displays again.
 
 ## Remove
 
